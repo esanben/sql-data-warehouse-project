@@ -62,24 +62,36 @@ The data architecture for this project follows the Medallion Architecture **Bron
 The hierarchy of this project is listed and described below.
 
 ```
-*   **`data-warehouse-project/`**
-    *   **`datasets/`**                          # Raw datasets used for the project (ERP and CRM data)
-
-    *   **`docs/`**                              # Project documentation and architecture details
-        *  `data_catalog.md`                     # Catalog of datasets, including field descriptions and metadata.
-  
-    *   **`scripts/`**                           # SQL scripts for ETL and transformations
-        *   `bronze/`                            # Scripts for extracting and loading raw data
-    *   **`docs/`**
-        *   `installation.md`
-        *   `usage.md`
-    *   `README.md`
-    *   `LICENSE`
-    *   `requirements.txt`
+📦 sql-data-warehouse-project
+├─ LICENSE                                     # License information for the repository
+├─ README.md                                   # Project overview and instructions
+├─ datasets                                    # Raw datasets used for the project (ERP and CRM data)
+│  ├─ source_crm
+│  │  ├─ cust_info.csv
+│  │  ├─ prd_info.csv
+│  │  └─ sales_details.csv
+│  └─ source_erp
+│     ├─ CUST_AZ12.csv
+│     ├─ LOC_A101.csv
+│     ├─ PX_CAT_G1V2.csv
+├─ docs
+│  └─ data_catalog.md                          # Catalog of datasets, including field descriptions and metadata
+├─ scripts                                     # SQL scripts for ETL and transformation
+│  ├─ bronze
+│  │  ├─ ddl_bronze.sql                        # SQL scripts for extracting and loading raw data
+│  │  └─ procedure_load_bronze.sql
+│  ├─ gold
+│  │  └─ ddl_gold.sql                          # SQL scripts for creating analytical models
+│  ├─ init_database.sql
+│  └─ silver
+│     ├─ ddl_silver.sql                        # SQL scripts for cleaning and transforming data
+│     └─ procedure_load_silver.sql
+└─ tests
+   └─ quality_checks_silver.sql                # Test scripts and quality files for the silver layer
 ```
 
 ## :shield: License
 This project is licensed under the [MIT License]. You are free to use, modify, and share this project with proper attribution
 
-## About Me
+## :man: About Me
 Hi there! I'm **Ayodele Benjamin Esan**. I hold a doctorate in Electrical Engineering with a focus on Deep Reinforcement Learning applications in Energy Systems. I'm in love with Data Engineering and on a mission to build systems that feed AI agents high-quality data to make informed decisions!
