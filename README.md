@@ -18,6 +18,7 @@ This project involves:
 - [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 - [SQL Server Management Studio](https://learn.microsoft.com/en-us/ssms/install/install)
 - [DrawIO](https://www.drawio.com/)
+- [Dataset](https://github.com/esanben/sql-data-warehouse-project/tree/main/datasets)
 
 ## :checkered_flag: Project Requirements
 
@@ -35,7 +36,7 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 
 ---
 
-### BI: Analytics & Reporting (Data Analytics)
+### :chart_with_upwards_trend: BI: Analytics & Reporting (Data Analytics)
 
 #### Objective
 Develop SQL-based analytics to deliver detailed insights into:
@@ -44,10 +45,40 @@ Develop SQL-based analytics to deliver detailed insights into:
 - **Sales Trends**
 
 These insights empower stakeholders with key business metrics, enabling strategic decision-making.
+For more details, refer to the [Data Catalog](https://github.com/esanben/sql-data-warehouse-project/blob/main/docs/data_catalog.md)
 
 ---
+## :pencil: Data Architecture
+The data architecture for this project follows the Medallion Architecture **Bronze**, **Silver**, and **Gold layers**:
 
-## License
+
+
+1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV files into SQL Server Database.
+2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
+3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+---
+
+## :open_file_folder: Repository Structure
+The hierarchy of this project is listed and described below.
+
+```
+*   **`data-warehouse-project/`**
+    *   **`datasets/`**                          # Raw datasets used for the project (ERP and CRM data)
+
+    *   **`docs/`**                              # Project documentation and architecture details
+        *  `data_catalog.md`                     # Catalog of datasets, including field descriptions and metadata.
+  
+    *   **`scripts/`**                           # SQL scripts for ETL and transformations
+        *   `bronze/`                            # Scripts for extracting and loading raw data
+    *   **`docs/`**
+        *   `installation.md`
+        *   `usage.md`
+    *   `README.md`
+    *   `LICENSE`
+    *   `requirements.txt`
+```
+
+## :shield: License
 This project is licensed under the [MIT License]. You are free to use, modify, and share this project with proper attribution
 
 ## About Me
